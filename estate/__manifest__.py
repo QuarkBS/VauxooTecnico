@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Real Estate',
-    'depends': ['base','web'],
+    'depends': ['base','web','web_dashboard'],
     'category': 'Real Estate/Brokerage',
     'data' : [
         'security/ir.model.access.csv',
@@ -16,5 +16,6 @@
         'views/inherited_estate_property_users_views.xml',
         'report/estate_property_templates.xml',
         'report/estate_property_reports.xml',
+        "report/estate_report_dashboard_views.xml",
         ],
 }

@@ -9,4 +9,5 @@
             <menuitem id="estate_property_tag_model_menu_action" action="estate_property_tag_action"/>
         </menuitem>
     </menuitem>
+    <menuitem id="estate.menu_estate_report_dashboard" name="Reporting" parent="estate_propery_test_menu_root"/>
 </odoo>
