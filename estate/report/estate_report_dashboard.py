@@ -2,9 +2,9 @@ from odoo import fields, models, tools
 
 
 class EstateReport(models.Model):
-    _name = 'estate.report.dashboard'
+    _name = "estate.report.dashboard"
     _description = "Stock Report"
-    _rec_name = 'id'
+    _rec_name = "id"
     _auto = False
 
     id = fields.Integer("", readonly=True)
@@ -14,7 +14,8 @@ class EstateReport(models.Model):
             ("refused", "Refused"),
         ],
         string="Offer Status",
-        readonly=True)
+        readonly=True,
+    )
     property_id = fields.Many2one("estate.property", string="Property", readonly=True)
     property_state = fields.Selection(
         selection=[
@@ -51,9 +52,12 @@ class EstateReport(models.Model):
 
     def init(self):
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute("""CREATE or REPLACE VIEW %s as (
+        self.env.cr.execute(
+            """CREATE or REPLACE VIEW %s as (
                                SELECT
                                 %s
                                FROM
                                 %s
-            )""" % (self._table, self._select(), self._from()))
+            )"""
+            % (self._table, self._select(), self._from())
+        )
