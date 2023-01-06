@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
     <record id="estate_property_type_action" model="ir.actions.act_window">
         <field name="name">Property types</field>
@@ -12,13 +12,18 @@
         <field name="arch" type="xml">
             <form string="Property types">
                 <header>
-                    <button name="%(estate.estate_property_offer_action)d" type="action" class="oe_stat_button" icon="fa-money">
-                        <field name="offer_count" widget="statinfo" string="Offers"/>
+                    <button
+                        name="%(estate.estate_property_offer_action)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-money"
+                    >
+                        <field name="offer_count" widget="statinfo" string=" Offers" />
                     </button>
                 </header>
                 <sheet>
-                    <field name="name"/>
-                    <field name="property_ids"/>
+                    <field name="name" />
+                    <field name="property_ids" />
                 </sheet>
             </form>
         </field>
@@ -29,7 +34,8 @@
         <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
             <tree string="Channel">
-                <field name="name"/>
+                <field name="sequence" widget="handle"/>
+                <field name="name" />
             </tree>
         </field>
     </record>
